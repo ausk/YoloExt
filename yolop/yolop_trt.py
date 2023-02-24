@@ -382,6 +382,7 @@ if __name__ == "__main__":
         for batch in image_path_batches:
             if len(batch) != yolop_wrapper.batch_size:
                 print("[WARN] current batch is not enough, just break !!!")
+                break
             batch_image_raw, use_time = yolop_wrapper.infer(yolop_wrapper.get_raw_image(batch))
             for i, img_path in enumerate(batch):
                 parent, filename = os.path.split(img_path)
